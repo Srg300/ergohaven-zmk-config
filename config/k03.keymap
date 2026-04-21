@@ -14,6 +14,24 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        scrin1 {
+            bindings = <&scrin1>;
+            key-positions = <53 43>;
+        };
+    };
+
+    macros {
+        scrin1: scrin1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp N4>;
+            label = "SCRIN1";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
