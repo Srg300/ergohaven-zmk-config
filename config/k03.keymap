@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     behaviors {
@@ -19,7 +20,7 @@
 
         scrin {
             bindings = <&scrin1>;
-            key-positions = <53 43>;
+            key-positions = <42 54>;
         };
     };
 
@@ -38,11 +39,11 @@
 
         base {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4                &kp N5                                  &kp N6            &kp N7                 &kp N8          &kp N9          &kp N0    &kp BSPC
-&kp ESC    &kp Q   &kp W     &kp E     &kp R                 &kp T                                   &kp Y             &kp U                  &kp I           &kp O           &kp P     &kp BSLH
-&kp TAB    &kp A   &kp S     &kp D     &kp F                 &kp G                                   &kp H             &kp J                  &kp K           &kp L           &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V                 &kp B           &kp LBKT     &kp RBKT   &kp N             &kp M                  &kp COMMA       &kp DOT         &kp FSLH  &kp RSHFT
-                   &kp LGUI  &kp LALT  &mt LCTRL DOWN_ARROW  &lt 1 UP_ARROW  &kp SPACE    &kp ENTER  &lt 2 LEFT_ARROW  &mt RCTRL RIGHT_ARROW  &mt RALT MINUS  &mt RGUI EQUAL
+&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4              &kp N5                                    &kp N6            &kp N7                 &kp N8          &kp N9          &kp N0    &kp BSPC
+&kp ESC    &kp Q   &kp W     &kp E     &kp R               &kp T                                     &kp Y             &kp U                  &kp I           &kp O           &kp P     &kp BSLH
+&kp TAB    &kp A   &kp S     &kp D     &kp F               &kp G                                     &kp H             &kp J                  &kp K           &kp L           &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X     &kp C     &kp V               &kp B             &kp LBKT     &kp RBKT   &kp N             &kp M                  &kp COMMA       &kp DOT         &kp FSLH  &kp RSHFT
+                   &kp LGUI  &kp LALT  &mt LCTRL UP_ARROW  &lt 1 DOWN_ARROW  &kp SPACE    &kp ENTER  &lt 2 LEFT_ARROW  &mt RCTRL RIGHT_ARROW  &mt RALT MINUS  &mt RGUI EQUAL
             >;
 
             display-name = "Base";
@@ -57,11 +58,11 @@
 
         nav {
             bindings = <
-&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                     &kp F7           &kp F8     &kp F9         &kp F10            &kp F11  &kp F12
-&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                    &kp PG_UP        &kp N7     &kp N8         &kp N9             &trans   &trans
-&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                    &kp PG_DN        &kp N4     &kp N5         &kp N6             &trans   &trans
-&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans  &kp PRINTSCREEN  &kp N1     &kp N2         &kp N3             &trans   &trans
-                &trans        &trans    &trans         &trans   &trans    &trans  &mo 3            &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_COMMAND
+&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                              &kp F7           &kp F8          &kp F9          &kp F10            &kp F11         &kp F12
+&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                             &kp PG_UP        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK          &msc SCRL_UP    &trans
+&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                             &kp PG_DN        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCRL_DOWN  &trans
+&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &kp PRINTSCREEN  &kp PRINTSCREEN  &trans          &trans          &trans             &trans          &trans
+                &trans        &trans    &trans         &trans   &trans    &trans           &mo 3            &kp RCTRL       &kp RIGHT_ALT   &kp RIGHT_COMMAND
             >;
 
             display-name = "Nav";
@@ -69,11 +70,11 @@
 
         sym {
             bindings = <
-&trans  &trans    &kp AT    &kp DLLR   &kp HASH  &trans                       &trans     &trans    &kp CARET  &trans    &trans    &kp DELETE
-&trans  &trans    &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &trans     &kp LBKT  &kp UNDER  &kp RBKT  &trans    &trans
-&trans  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp PRCNT  &kp LBRC  &kp SEMI   &kp RBRC  &kp EXCL  &trans
-&trans  &trans    &kp STAR  &kp COLON  &kp FSLH  &trans     &trans    &trans  &trans     &kp PIPE  &kp TILDE  &kp AMPS  &trans    &trans
-                  &trans    &trans     &trans    &mo 3      &trans    &trans  &trans     &trans    &trans     &trans
+&trans  &trans    &kp AT    &kp DLLR   &kp HASH  &trans                       &trans                &trans                &trans        &kp MINUS  &kp EQUAL  &kp DELETE
+&trans  &trans    &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &trans                &trans                &trans        &trans     &kp LBKT   &kp RIGHT_BRACKET
+&trans  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans        &trans     &trans     &trans
+&trans  &trans    &kp STAR  &kp COLON  &kp FSLH  &trans     &trans    &trans  &kp C_VOLUME_DOWN     &kp C_MUTE            &kp C_VOL_UP  &trans     &trans     &trans
+                  &trans    &trans     &trans    &mo 3      &trans    &trans  &trans                &trans                &trans        &trans
             >;
 
             display-name = "Symbols";
