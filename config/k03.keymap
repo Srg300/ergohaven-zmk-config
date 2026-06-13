@@ -13,6 +13,34 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
+        up_arrow_command: up_arrow_command {
+            compatible = "zmk,behavior-tap-dance";
+            label = "UP_ARROW_COMMAND";
+            #binding-cells = <0>;
+            bindings = <&mt LEFT_COMMAND UP_ARROW>, <&kp UP>;
+        };
+
+        down_arrow_layer_1: down_arrow_layer_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOWN_ARROW_LAYER_1";
+            #binding-cells = <0>;
+            bindings = <&lt 1 DOWN_ARROW>, <&kp DOWN_ARROW>;
+        };
+
+        left_arrow_layer_2: left_arrow_layer_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LEFT_ARROW_LAYER_2";
+            #binding-cells = <0>;
+            bindings = <&lt 2 LEFT_ARROW>, <&kp LEFT_ARROW>;
+        };
+
+        right_arrow_command: right_arrow_command {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RIGHT_ARROW_COMMAND";
+            #binding-cells = <0>;
+            bindings = <&mt RIGHT_COMMAND RIGHT_ARROW>, <&kp RIGHT_ARROW>;
+        };
     };
 
     combos {
@@ -39,11 +67,11 @@
 
         base {
             bindings = <
-&kp ESCAPE        &kp N1  &kp N2     &kp N3    &kp N4                     &kp N5                                        &kp N6            &kp N7                         &kp N8          &kp N9                   &kp N0    &kp BSPC
-&kp TAB           &kp Q   &kp W      &kp E     &kp R                      &kp T                                         &kp Y             &kp U                          &kp I           &kp O                    &kp P     &kp LEFT_BRACKET
-&kp LEFT_SHIFT    &kp A   &kp S      &kp D     &kp F                      &kp G                                         &kp H             &kp J                          &kp K           &kp L                    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X      &kp C     &kp V                      &kp B             &kp BACKSLASH    &kp GRAVE  &kp N             &kp M                          &kp COMMA       &kp DOT                  &kp FSLH  &kp RIGHT_BRACKET
-                          &kp RCTRL  &kp LALT  &mt LEFT_COMMAND UP_ARROW  &lt 1 DOWN_ARROW  &kp SPACE        &kp ENTER  &lt 2 LEFT_ARROW  &mt RIGHT_COMMAND RIGHT_ARROW  &mt RALT MINUS  &mt RIGHT_CONTROL EQUAL
+&kp ESCAPE        &kp N1  &kp N2     &kp N3    &kp N4             &kp N5                                           &kp N6               &kp N7                &kp N8          &kp N9                   &kp N0    &kp BSPC
+&kp TAB           &kp Q   &kp W      &kp E     &kp R              &kp T                                            &kp Y                &kp U                 &kp I           &kp O                    &kp P     &kp LEFT_BRACKET
+&kp LEFT_SHIFT    &kp A   &kp S      &kp D     &kp F              &kp G                                            &kp H                &kp J                 &kp K           &kp L                    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X      &kp C     &kp V              &kp B                &kp BACKSLASH    &kp GRAVE  &kp N                &kp M                 &kp COMMA       &kp DOT                  &kp FSLH  &kp RIGHT_BRACKET
+                          &kp RCTRL  &kp LALT  &up_arrow_command  &down_arrow_layer_1  &kp SPACE        &kp ENTER  &left_arrow_layer_2  &right_arrow_command  &mt RALT MINUS  &mt RIGHT_CONTROL EQUAL
             >;
 
             display-name = "Base";
