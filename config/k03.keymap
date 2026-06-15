@@ -20,7 +20,7 @@
             #binding-cells = <0>;
             bindings = <&mt LEFT_COMMAND UP_ARROW>, <&kp UP>;
 
-            tapping-term-ms = <50>;
+            tapping-term-ms = <100>;
         };
 
         down_arrow_layer_1: down_arrow_layer_1 {
@@ -29,7 +29,7 @@
             #binding-cells = <0>;
             bindings = <&lt 1 DOWN_ARROW>, <&kp DOWN_ARROW>;
 
-            tapping-term-ms = <50>;
+            tapping-term-ms = <100>;
         };
 
         left_arrow_layer_2: left_arrow_layer_2 {
@@ -38,7 +38,7 @@
             #binding-cells = <0>;
             bindings = <&lt 2 LEFT_ARROW>, <&kp LEFT_ARROW>;
 
-            tapping-term-ms = <50>;
+            tapping-term-ms = <100>;
         };
 
         right_arrow_command: right_arrow_command {
@@ -47,7 +47,7 @@
             #binding-cells = <0>;
             bindings = <&mt RIGHT_COMMAND RIGHT_ARROW>, <&kp RIGHT_ARROW>;
 
-            tapping-term-ms = <50>;
+            tapping-term-ms = <100>;
         };
     };
 
