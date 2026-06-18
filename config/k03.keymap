@@ -20,8 +20,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <150>;    // внутренний таймер
-            quick-tap-ms = <125>;       // уменьшил для лучшей отзывчивости
+            tapping-term-ms = <100>;    // внутренний таймер
+            quick-tap-ms = <50>;       // уменьшил для лучшей отзывчивости
             bindings = <&kp>, <&kp>;
         };
 
@@ -31,8 +31,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <150>;    // внутренний таймер
-            quick-tap-ms = <125>;       // уменьшил для лучшей отзывчивости
+            tapping-term-ms = <100>;    // внутренний таймер
+            quick-tap-ms = <50>;       // уменьшил для лучшей отзывчивости
             bindings = <&mo>, <&kp>;
         };
 
