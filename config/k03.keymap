@@ -7,49 +7,62 @@
 
 / {
     behaviors {
-        enc_vol: enc_vol {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENC_VOL";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
-        };
-
-        up_arrow_command: up_arrow_command {
-            compatible = "zmk,behavior-tap-dance";
-            label = "UP_ARROW_COMMAND";
-            #binding-cells = <0>;
-            bindings = <&mt LEFT_COMMAND UP_ARROW>, <&kp UP>;
-
-            tapping-term-ms = <250>;
-        };
-
-        down_arrow_layer_1: down_arrow_layer_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DOWN_ARROW_LAYER_1";
-            #binding-cells = <0>;
-            bindings = <&lt 1 DOWN_ARROW>, <&kp DOWN_ARROW>;
-
-            tapping-term-ms = <250>;
-        };
-
-        left_arrow_layer_2: left_arrow_layer_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LEFT_ARROW_LAYER_2";
-            #binding-cells = <0>;
-            bindings = <&lt 2 LEFT_ARROW>, <&kp LEFT_ARROW>;
-
-            tapping-term-ms = <250>;
-        };
-
-        right_arrow_command: right_arrow_command {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RIGHT_ARROW_COMMAND";
-            #binding-cells = <0>;
-            bindings = <&mt RIGHT_COMMAND RIGHT_ARROW>, <&kp RIGHT_ARROW>;
-
-            tapping-term-ms = <250>;
-        };
+    enc_vol: enc_vol {
+        compatible = "zmk,behavior-sensor-rotate";
+        label = "ENC_VOL";
+        #sensor-binding-cells = <0>;
+        bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
     };
+
+    // Кастомный mod-tap для Command
+    my_cmd_mt: my_cmd_mt {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;    // внутренний таймер
+        quick-tap-ms = <125>;       // уменьшил для лучшей отзывчивости
+        bindings = <&kp>, <&kp>;
+    };
+
+    // Кастомный layer-tap для смены слоёв
+    my_lt: my_lt {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;    // внутренний таймер
+        quick-tap-ms = <125>;       // уменьшил для лучшей отзывчивости
+        bindings = <&mo>, <&kp>;
+    };
+
+    // Ваши tap-dance с увеличенным внешним таймером
+    up_arrow_command: up_arrow_command {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        bindings = <&my_cmd_mt LEFT_COMMAND UP_ARROW>, <&kp UP>;
+        tapping-term-ms = <250>;    // увеличил до 250
+    };
+
+    down_arrow_layer_1: down_arrow_layer_1 {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        bindings = <&my_lt 1 DOWN_ARROW>, <&kp DOWN_ARROW>;
+        tapping-term-ms = <250>;    // увеличил до 250
+    };
+
+    left_arrow_layer_2: left_arrow_layer_2 {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        bindings = <&my_lt 2 LEFT_ARROW>, <&kp LEFT_ARROW>;
+        tapping-term-ms = <250>;    // увеличил до 250
+    };
+
+    right_arrow_command: right_arrow_command {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        bindings = <&my_cmd_mt RIGHT_COMMAND RIGHT_ARROW>, <&kp RIGHT_ARROW>;
+        tapping-term-ms = <250>;    // увеличил до 250
+    };
+};
 
     combos {
         compatible = "zmk,combos";
