@@ -116,11 +116,11 @@
 
         nav {
             bindings = <
-&kp F1      &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                              &kp F7           &kp F8          &kp F9          &kp F10            &kp F11         &kp F12
-&trans      &trans  &kp HOME      &kp UP    &kp END        &kp INS                             &kp PG_UP        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK          &msc SCRL_UP    &trans
-&trans      &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                             &kp PG_DN        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCRL_DOWN  &trans
-&kp K_FIND  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &kp PRINTSCREEN  &kp PRINTSCREEN  &trans          &trans          &trans             &trans          &trans
-                    &trans        &trans    &trans         &trans   &trans    &trans           &mo 3            &kp RCTRL       &kp RIGHT_ALT   &kp RIGHT_COMMAND
+&kp F1      &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                              &kp F7           &kp F8          &kp F9          &kp F10          &kp F11         &kp F12
+&kp CAPS    &trans  &kp HOME      &kp UP    &kp END        &kp INS                             &kp PG_UP        &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP    &trans
+&trans      &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                             &kp PG_DN        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &trans
+&kp K_FIND  &trans  &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &kp DEL  &mo 3     &kp PRINTSCREEN  &kp PRINTSCREEN  &trans          &trans          &trans           &kp RIGHT_ALT   &kp RIGHT_COMMAND
+                    &trans        &trans    &trans         &trans   &trans    &trans           &trans           &kp RCTRL       &trans          &trans
             >;
 
             display-name = "Nav";
@@ -128,11 +128,11 @@
 
         sym {
             bindings = <
-&trans  &trans    &kp AT    &kp DLLR   &kp HASH  &trans                       &trans                &trans                &trans        &kp MINUS  &kp EQUAL  &kp DELETE
-&trans  &trans    &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &trans                &trans                &trans        &trans     &kp LBKT   &kp RIGHT_BRACKET
-&trans  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans        &trans     &trans     &trans
-&trans  &trans    &kp STAR  &kp COLON  &kp FSLH  &trans     &trans    &trans  &kp C_VOLUME_DOWN     &kp C_MUTE            &kp C_VOL_UP  &trans     &trans     &trans
-                  &trans    &trans     &trans    &mo 3      &trans    &trans  &trans                &trans                &trans        &trans
+&trans    &trans    &kp AT    &kp DLLR   &kp HASH  &trans                       &trans                &trans                &trans        &kp MINUS  &kp EQUAL  &kp DELETE
+&kp CAPS  &trans    &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &trans                &trans                &trans        &trans     &kp LBKT   &kp RIGHT_BRACKET
+&trans    &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans        &trans     &trans     &trans
+&trans    &trans    &kp STAR  &kp COLON  &kp FSLH  &trans     &trans    &trans  &kp C_VOLUME_DOWN     &kp C_MUTE            &kp C_VOL_UP  &trans     &trans     &trans
+                    &trans    &trans     &trans    &trans     &trans    &trans  &trans                &trans                &trans        &trans
             >;
 
             display-name = "Symbols";
